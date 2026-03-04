@@ -1,0 +1,114 @@
+{
+  "categorias": [
+    {
+      "id": "juegos_interactivos_cortos",
+      "nombre": "Juegos interactivos",
+      "descripcion": "Actividades breves y dinámicas para practicar contenidos específicos de forma lúdica y participativa.",
+      "subcategorias": [
+        { "id": "quiz", "nombre": "Preguntas y respuestas (quiz)" },
+        { "id": "emparejar", "nombre": "Emparejar conceptos" },
+        { "id": "completar", "nombre": "Completar espacios" },
+        { "id": "ordenar", "nombre": "Ordenar secuencias" },
+        { "id": "crucigrama", "nombre": "Crucigrama" },
+        { "id": "verdadero_falso", "nombre": "Verdadero o falso" },
+        { "id": "arrastrar_soltar", "nombre": "Arrastrar y soltar" },
+        { "id": "memoria", "nombre": "Juego de memoria" }
+      ]
+    },
+    {
+      "id": "juegos_aventura_historia",
+      "nombre": "Juegos tipo aventura o historia",
+      "descripcion": "Recursos donde el aprendizaje ocurre dentro de una narrativa, misiones o retos que avanzan por niveles.",
+      "subcategorias": [
+        {
+          "id": "plataforma",
+          "nombre": "Juego de plataforma (personaje que avanza y supera retos)"
+        },
+        { "id": "rpg", "nombre": "Juego tipo RPG con misiones y diálogos" },
+        {
+          "id": "niveles_progresivos",
+          "nombre": "Juego por niveles con retos progresivos"
+        },
+        {
+          "id": "historia_interactiva",
+          "nombre": "Historia interactiva con toma de decisiones"
+        }
+      ]
+    },
+    {
+      "id": "simuladores",
+      "nombre": "Simuladores y experiencias prácticas",
+      "descripcion": "Aplicaciones que permiten experimentar situaciones reales o procesos para comprenderlos de forma práctica.",
+      "subcategorias": [
+        { "id": "laboratorio", "nombre": "Simulador de laboratorio" },
+        {
+          "id": "toma_decisiones",
+          "nombre": "Simulador de toma de decisiones"
+        },
+        {
+          "id": "procesos",
+          "nombre": "Simulación de procesos (ciclo del agua, sistema digestivo, etc.)"
+        },
+        {
+          "id": "profesional",
+          "nombre": "Simulación profesional (empresa, presupuesto, etc.)"
+        }
+      ]
+    },
+    {
+      "id": "presentaciones_interactivas",
+      "nombre": "Presentaciones interactivas",
+      "descripcion": "Recursos visuales e interactivos que permiten explorar información mediante botones, animaciones o recorridos libres.",
+      "subcategorias": [
+        { "id": "infografia", "nombre": "Infografía interactiva" },
+        { "id": "linea_tiempo", "nombre": "Línea del tiempo interactiva" },
+        { "id": "mapa", "nombre": "Mapa interactivo" },
+        {
+          "id": "presentacion_explorable",
+          "nombre": "Presentación con exploración libre"
+        },
+        { "id": "escape_room", "nombre": "Escape room digital" }
+      ]
+    },
+    {
+      "id": "evaluaciones_digitales",
+      "nombre": "Evaluaciones digitales",
+      "descripcion": "Herramientas para valorar aprendizajes mediante actividades estructuradas con retroalimentación automática o guiada.",
+      "subcategorias": [
+        { "id": "diagnostica", "nombre": "Prueba diagnóstica" },
+        { "id": "sumativa", "nombre": "Prueba sumativa" },
+        { "id": "autoevaluacion", "nombre": "Autoevaluación" },
+        {
+          "id": "retroalimentacion",
+          "nombre": "Evaluación con retroalimentación automática"
+        }
+      ]
+    },
+    {
+      "id": "recursos_multimedia",
+      "nombre": "Recursos multimedia educativos",
+      "descripcion": "Material audiovisual o animado que apoya la explicación de contenidos y favorece la comprensión visual y auditiva.",
+      "subcategorias": [
+        { "id": "galeria_animada", "nombre": "Galería animada" },
+        { "id": "animacion", "nombre": "Animación explicativa" }
+      ]
+    },
+    {
+      "id": "herramientas_consulta",
+      "nombre": "Aplicaciones de consulta o apoyo",
+      "descripcion": "Herramientas educativas que permiten consultar información, practicar cálculos o explorar contenidos de forma autónoma.",
+      "subcategorias": [
+        { "id": "diccionario", "nombre": "Diccionario interactivo" },
+        { "id": "calculadora", "nombre": "Calculadora educativa" },
+        { "id": "banco_recursos", "nombre": "Banco de recursos" },
+        { "id": "explorador_tematico", "nombre": "Explorador temático" }
+      ]
+    },
+    {
+      "id": "proyecto_personalizado",
+      "nombre": "Proyecto personalizado",
+      "descripcion": "Propuesta que no encaja en las categorías anteriores y requiere diseño específico según la necesidad planteada.",
+      "subcategorias": [{ "id": "otro", "nombre": "Otro (describa la idea)" }]
+    }
+  ]
+}
