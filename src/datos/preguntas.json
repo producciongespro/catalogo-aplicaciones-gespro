@@ -1,0 +1,38 @@
+{
+  "juegos": [
+    {
+      "id": 1,
+      "titulo": "Instrumentos musicales",
+      "instrucciones": "Arrastra el instrumento al grupo correcto",
+      "areas": [
+        { "id": 1, "nombre": "Viento" },
+        { "id": 2, "nombre": "Percusion" },
+        { "id": 3, "nombre": "Cuerda" }
+      ],
+      "items": [
+        { "id": 1, "nombre": "Flauta", "imagen": "flauta.png", "respuesta": 1 },
+        { "id": 2, "nombre": "Trompeta", "imagen": "trompeta.png", "respuesta": 1 },
+        { "id": 3, "nombre": "Tambor", "imagen": "tambor.png", "respuesta": 2 },
+        { "id": 4, "nombre": "Maracas", "imagen": "maracas.png", "respuesta": 2 },
+        { "id": 5, "nombre": "Guitarra", "imagen": "guitarra.png", "respuesta": 3 },
+        { "id": 6, "nombre": "Violin", "imagen": "violin.png", "respuesta": 3 }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Letra inicial",
+      "instrucciones": "Arrastra la imagen que empieza con la letra",
+      "areas": [
+        { "id": 1, "nombre": "M" },
+        { "id": 2, "nombre": "P" },
+        { "id": 3, "nombre": "C" }
+      ],
+      "items": [
+        { "id": 1, "nombre": "Mono", "imagen": "mono.png", "audio": "mono.mp3", "respuesta": 1 },
+        { "id": 2, "nombre": "Perro", "imagen": "perro.png", "audio": "perro.mp3", "respuesta": 2 },
+        { "id": 3, "nombre": "Caballo", "imagen": "caballo.png", "audio": "caballo.mp3", "respuesta": 3 },
+        { "id": 4, "nombre": "Cerdo", "imagen": "cerdo.png", "audio": "cerdo.mp3", "respuesta": 4 }
+      ]
+    }
+  ]
+}
