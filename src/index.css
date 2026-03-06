@@ -1,0 +1,18 @@
+.elemento{
+    padding: 10px;
+    border: 2px solid black;
+    cursor: grab;
+    width: 120px;
+}
+.elemento:hover{
+    background-color: aqua;
+}
+
+.areas{
+    width: 150px;
+    height: 120px;
+    border: 3px dashed gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

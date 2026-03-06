@@ -9,7 +9,7 @@
         { "id": 2, "nombre": "Percusion" },
         { "id": 3, "nombre": "Cuerda" }
       ],
-      "items": [
+      "elementos": [
         { "id": 1, "nombre": "Flauta", "imagen": "flauta.png", "respuesta": 1 },
         { "id": 2, "nombre": "Trompeta", "imagen": "trompeta.png", "respuesta": 1 },
         { "id": 3, "nombre": "Tambor", "imagen": "tambor.png", "respuesta": 2 },
@@ -27,7 +27,7 @@
         { "id": 2, "nombre": "P" },
         { "id": 3, "nombre": "C" }
       ],
-      "items": [
+      "elementos": [
         { "id": 1, "nombre": "Mono", "imagen": "mono.png", "audio": "mono.mp3", "respuesta": 1 },
         { "id": 2, "nombre": "Perro", "imagen": "perro.png", "audio": "perro.mp3", "respuesta": 2 },
         { "id": 3, "nombre": "Caballo", "imagen": "caballo.png", "audio": "caballo.mp3", "respuesta": 3 },
