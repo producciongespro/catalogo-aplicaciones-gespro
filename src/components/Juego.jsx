@@ -8,6 +8,8 @@ export default function Juego() {
     // logica del juego
     // crear una constante con los juegos usando fetch
     // cargar los datos en una constante usar useEffect
+    // el estado juegos almacena los niveles 1,2,3
+    // el estado elementos guarda los elementos que se pueden arrastrar
 
     useEffect(() => {
         setup()
@@ -26,6 +28,7 @@ export default function Juego() {
         
     }
 
+    // todo: tengo que pensar como hacer que el juego avance cuando termine el primero
     // iniciar el juego primer juego
     const juegoActual = juegos[0]
     // console.log("Juego Actual",juegoActual);
