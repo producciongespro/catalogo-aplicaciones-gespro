@@ -31,25 +31,24 @@ export default function Juego() {
         
     }
 
-    // todo: tengo que pensar como hacer que el juego avance cuando termine el primero
-    //  setContadorJuegos(1)
+
     // iniciar el juego primer juego
     const juegoActual = juegos[contadorJuegos]
     // console.log("Juego Actual",juegoActual);
     
 
     // cuando el elemento inicia el arrastre se transfiere a la caja que recibe
-    const onDragStart = (e, elemento)=>{
+    const handleOnDragStart = (e, elemento)=>{
         e.dataTransfer.setData("elemento", JSON.stringify(elemento))
     }
 
     // prevenir el comportamiento del evento en el navegador
-    const permitirDrop = (e)=>{
+    const handlePermitirDrop = (e)=>{
         e.preventDefault();
     }
 
     // cuando el elemento cae en el area, aca va toda la logica
-    const onDrop = (e, juegoId)=>{
+    const handleOnDrop = (e, juegoId)=>{
         e.preventDefault();
         // se recibe el valor que viene en el transfer con getData
         const elemento = JSON.parse(e.dataTransfer.getData("elemento"))
@@ -97,7 +96,7 @@ export default function Juego() {
                         <div key={elemento.id} 
                             className="elemento" 
                             draggable
-                            onDragStart={(e)=> onDragStart(e, elemento)}
+                            onDragStart={(e)=> handleOnDragStart(e, elemento)}
                         >
                             <p>{elemento.nombre}</p>
                         </div>
@@ -111,8 +110,8 @@ export default function Juego() {
                             <div 
                                 key={juego.id} 
                                 className="areas"
-                                onDrop={(e)=> onDrop(e, juego.id)}
-                                onDragOver={permitirDrop}
+                                onDrop={(e)=> handleOnDrop(e, juego.id)}
+                                onDragOver={handlePermitirDrop}
                             >
                                 <p>{juego.nombre}</p>
                             </div>
