@@ -31,7 +31,7 @@
         { "id": 1, "nombre": "Mono", "imagen": "mono.png", "audio": "mono.mp3", "respuesta": 1 },
         { "id": 2, "nombre": "Perro", "imagen": "perro.png", "audio": "perro.mp3", "respuesta": 2 },
         { "id": 3, "nombre": "Caballo", "imagen": "caballo.png", "audio": "caballo.mp3", "respuesta": 3 },
-        { "id": 4, "nombre": "Cerdo", "imagen": "cerdo.png", "audio": "cerdo.mp3", "respuesta": 4 }
+        { "id": 4, "nombre": "Cerdo", "imagen": "cerdo.png", "audio": "cerdo.mp3", "respuesta": 3 }
       ]
     }
   ]
