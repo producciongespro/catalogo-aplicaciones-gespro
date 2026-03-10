@@ -23,7 +23,7 @@
       "id": 2,
       "tipo": "sonido",
       "titulo": "Letra inicial",
-      "instrucciones": "Arrastra la imagen que empieza con la letra",
+      "instrucciones": "Escucha el audio y arrastra a la letra inicial del animal",
       "areas": [
         { "id": 1, "nombre": "M" },
         { "id": 2, "nombre": "P" },
