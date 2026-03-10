@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import confetti from "canvas-confetti";
 
 export default function Juego() {
 
@@ -62,18 +62,32 @@ export default function Juego() {
 
             if(nuevosElementos.length === 0){
               
-                // aca valoramos si el arreglo de juegos esta vacio
-                if(contadorJuegos < juegos.length - 1){
-                    const siguienteJuego = contadorJuegos + 1;
+                sonidoFin.play()
 
-                    setContadorJuegos(siguienteJuego)
-                    setElementos(juegos[siguienteJuego].elementos)
-                    // mensajes aca setearlo
-                    setMensaje("Nivel completado")
-                }else{
-                    // mensajes aca setearlo
-                    setMensaje("Juego Terminado")
-                }
+                confetti({
+                    particleCount: 150,
+                    spread: 100,
+                    origin: { y: 0.6 }
+                })
+
+                setMensaje("Nivel completado")
+
+
+                setTimeout(()=>{
+                    // aca valoramos si el arreglo de juegos esta vacio
+                    if(contadorJuegos < juegos.length - 1){
+                        const siguienteJuego = contadorJuegos + 1;
+
+                        setContadorJuegos(siguienteJuego)
+                        setElementos(juegos[siguienteJuego].elementos)
+                        // mensajes aca setearlo
+                        setMensaje("Nivel completado")
+                    }else{
+                        // mensajes aca setearlo
+                        setMensaje("Juego Terminado")
+                    }
+                },2000) //2 segunditos
+                
             }else{
                 // mensajes aca setearlo
                 setMensaje("Correcto")
@@ -95,13 +109,14 @@ export default function Juego() {
                 {/* elementos para arrastrar */}
                 <div className="col-12 d-flex justify-content-center gap-3 mt-5 mb-5">
                     {elementos.map(elemento =>(
-                        <div key={elemento.id} 
+                        <img 
                             className="elemento" 
+                            src={`/imagenes/${elemento.imagen}`} 
+                            alt={elemento.nombre} 
+                            key={elemento.id} 
                             draggable
                             onDragStart={(e)=> handleOnDragStart(e, elemento)}
-                        >
-                            <p>{elemento.nombre}</p>
-                        </div>
+                        />
                     ))}
                 </div>
 

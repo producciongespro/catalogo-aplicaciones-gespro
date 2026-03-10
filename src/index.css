@@ -1,11 +1,10 @@
 .elemento{
-    padding: 10px;
-    border: 2px solid black;
     cursor: grab;
     width: 120px;
+    transition: all .3s ease-in-out;
 }
 .elemento:hover{
-    background-color: aqua;
+    transform: rotate(3deg);
 }
 
 .areas{
@@ -20,21 +19,6 @@
 .game-bg{
   min-height:100vh;
   background: linear-gradient(135deg,#74b9ff,#a29bfe);
-}
-
-.game-card{
-  width:350px;
-  border-radius:20px;
-  position:relative;
-  padding-top:60px;
-}
-
-.game-img{
-  width:120px;
-  position:absolute;
-  top:-60px;
-  left:50%;
-  transform:translateX(-50%);
 }
 
 .inicio-bg{
