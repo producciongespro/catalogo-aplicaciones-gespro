@@ -16,3 +16,66 @@
     justify-content: center;
     align-items: center;
 }
+
+.game-bg{
+  min-height:100vh;
+  background: linear-gradient(135deg,#74b9ff,#a29bfe);
+}
+
+.game-card{
+  width:350px;
+  border-radius:20px;
+  position:relative;
+  padding-top:60px;
+}
+
+.game-img{
+  width:120px;
+  position:absolute;
+  top:-60px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.inicio-bg{
+  min-height:100vh;
+  background:rgba(0,0,0,0.2);
+}
+
+.start-card{
+  width:420px;
+  background:white;
+  border-radius:20px;
+  position:relative;
+  padding-top:70px;
+}
+
+.robot-img{
+  width:430px;
+  position:absolute;
+  top:-50px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.start-btn{
+  padding:14px 28px;
+  border-radius:12px;
+  font-size:18px;
+}
+
+.progress-circle{
+  position:relative;
+  width:220px;
+  height:220px;
+}
+
+.count-number{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:70px;
+  font-weight:bold;
+  color:#28a745;
+}

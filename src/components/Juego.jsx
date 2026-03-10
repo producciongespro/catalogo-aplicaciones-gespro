@@ -7,11 +7,10 @@ export default function Juego() {
     const [elementos, setElementos]= useState([])
     const [contadorJuegos, setContadorJuegos]= useState(0)
     const [mensaje, setMensaje]= useState("")
-    // logica del juego
-    // crear una constante con los juegos usando fetch
-    // cargar los datos en una constante usar useEffect
-    // el estado juegos almacena los niveles 1,2,3
-    // el estado elementos guarda los elementos que se pueden arrastrar
+    
+    const sonidoOk = new Audio("/sonidos/ok.mp3")
+    const sonidoNo = new Audio("/sonidos/no.mp3")
+    const sonidoFin = new Audio("/sonidos/fin.mp3")
 
     useEffect(() => {
         setup()
@@ -55,6 +54,8 @@ export default function Juego() {
 
         // validar el campo de la respuesta del elemento con el area que cae
         if(elemento.respuesta === juegoId){
+            // sonido correcta posicion
+            sonidoOk.play()
             // filtar los elementos para quitarlos de la pantalla 
             const nuevosElementos = elementos.filter(ele => ele.id !== elemento.id);
             // setearlos al state
@@ -78,6 +79,7 @@ export default function Juego() {
                 setMensaje("Correcto")
             }
         }else{
+            sonidoNo.play()
             setMensaje("Intenta otra vez")
         }
     }

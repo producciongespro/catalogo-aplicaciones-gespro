@@ -1,32 +1,25 @@
 import { useState } from "react"
+import PantallaInicio from "./components/PantallaInicio";
+import CuentaRegresiva from "./components/CuentaRegresiva";
 import Juego from "./components/Juego"
 
-function App() {
+export default function App() {
   
-  const [iniciar, setIniciar] = useState(false)
-
+  const [iniciar, setIniciar] = useState("inicio");
+  
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-12 text-center">
-          <h1>Juego de Arrastrar y Soltar</h1>
-
-
-          {!iniciar ? (
-              <button 
-                className="btn btn-outline-success btn-lg"
-                onClick={()=> setIniciar(true)}
-              >
-                 Iniciar Juego
-              </button>
-          ):(
-            <Juego/>
-          )}
-
-        </div>
-      </div>
+    <div className="game-bg">
+      {iniciar === "inicio" && (
+        <PantallaInicio iniciar={()=>setIniciar("contador")}/>
+      )}
+      {iniciar === "contador" && (
+        <CuentaRegresiva terminar={()=>setIniciar("juego")}/>
+      )}
+      {iniciar === "juego" && (
+        <Juego/>
+      )}
     </div>
   )
 }
 
-export default App
+
