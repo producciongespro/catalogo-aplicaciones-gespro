@@ -30,7 +30,6 @@ export default function Juego() {
         
     }
 
-
     // iniciar el juego primer juego
     const juegoActual = juegos[contadorJuegos]
     // console.log("Juego Actual",juegoActual);
@@ -62,6 +61,7 @@ export default function Juego() {
             setElementos(nuevosElementos)
 
             if(nuevosElementos.length === 0){
+              
                 // aca valoramos si el arreglo de juegos esta vacio
                 if(contadorJuegos < juegos.length - 1){
                     const siguienteJuego = contadorJuegos + 1;
@@ -69,7 +69,7 @@ export default function Juego() {
                     setContadorJuegos(siguienteJuego)
                     setElementos(juegos[siguienteJuego].elementos)
                     // mensajes aca setearlo
-                    setMensaje("Nivel compeltado")
+                    setMensaje("Nivel completado")
                 }else{
                     // mensajes aca setearlo
                     setMensaje("Juego Terminado")
