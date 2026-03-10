@@ -2,6 +2,7 @@
   "juegos": [
     {
       "id": 1,
+      "tipo": "imagenes",
       "titulo": "Instrumentos musicales",
       "instrucciones": "Arrastra el instrumento al grupo correcto",
       "areas": [
@@ -20,6 +21,7 @@
     },
     {
       "id": 2,
+      "tipo": "sonido",
       "titulo": "Letra inicial",
       "instrucciones": "Arrastra la imagen que empieza con la letra",
       "areas": [

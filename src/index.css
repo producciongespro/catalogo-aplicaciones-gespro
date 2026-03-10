@@ -8,8 +8,8 @@
 }
 
 .areas{
-    width: 150px;
-    height: 120px;
+    width: 250px;
+    height: 160px;
     border: 3px dashed gray;
     display: flex;
     justify-content: center;

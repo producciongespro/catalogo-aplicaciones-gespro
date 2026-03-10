@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
+import CargarJuegos from "./CargarJuegos";
 
 export default function Juego() {
 
@@ -103,47 +104,16 @@ export default function Juego() {
 
     return(
         <div className="container">
-            <h2>{juegoActual.titulo}</h2>
-            <h3>{juegoActual.instrucciones}</h3>
-            <div className="row">
-                {/* elementos para arrastrar */}
-                <div className="col-12 d-flex justify-content-center gap-3 mt-5 mb-5">
-                    {elementos.map(elemento =>(
-                        <img 
-                            className="elemento" 
-                            src={`/imagenes/${elemento.imagen}`} 
-                            alt={elemento.nombre} 
-                            key={elemento.id} 
-                            draggable
-                            onDragStart={(e)=> handleOnDragStart(e, elemento)}
-                        />
-                    ))}
-                </div>
-
-                {/* areas para dejar caer los elementos */}
-                <div className="col-12 d-flex justify-content-center gap-5 mt-5">
-                    {
-                        juegoActual?.areas.map(juego=>(
-                            <div 
-                                key={juego.id} 
-                                className="areas"
-                                onDrop={(e)=> handleOnDrop(e, juego.id)}
-                                onDragOver={handlePermitirDrop}
-                            >
-                                <p>{juego.nombre}</p>
-                            </div>
-                        ))
-                    }
-                </div>
-                
-
-                <h3>{mensaje}</h3>
-
-                <p>
-                    Juego {contadorJuegos + 1} de {juegos.length}
-                </p>
-
-            </div>
+            <CargarJuegos 
+                juego={juegoActual}
+                elementos={elementos}
+                handleOnDragStart={handleOnDragStart}
+                handleOnDrop={handleOnDrop}
+                handlePermitirDrop={handlePermitirDrop}
+                mensaje={mensaje}
+                contadorJuegos={contadorJuegos}
+                juegos={juegos}
+            />
         </div>
     )
 }

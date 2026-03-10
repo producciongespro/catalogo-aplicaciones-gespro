@@ -8,7 +8,7 @@ export default function App() {
   const [iniciar, setIniciar] = useState("inicio");
   
   return (
-    <div className="game-bg">
+    <div className="game-bg text-center">
       {iniciar === "inicio" && (
         <PantallaInicio iniciar={()=>setIniciar("contador")}/>
       )}
