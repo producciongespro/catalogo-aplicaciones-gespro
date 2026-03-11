@@ -10,6 +10,7 @@ export default function Juego() {
     const [mensaje, setMensaje]= useState("")
     const [areaActiva, setAreaActiva] = useState(null)
     const [estadoDrop, setEstadoDrop] = useState(null)
+    const [mostrarModal, setMostrarModal] = useState(false)
     
     const sonidoOk = new Audio("/sonidos/ok.mp3")
     const sonidoNo = new Audio("/sonidos/no.mp3")
@@ -96,6 +97,8 @@ export default function Juego() {
                     }else{
                         // mensajes aca setearlo
                         setMensaje("Juego Terminado")
+                        // abre el modal de juego terminado
+                        setMostrarModal(true)
                     }
                 },2000) //2 segunditos
                 
@@ -116,23 +119,70 @@ export default function Juego() {
         }
     }
 
+    // reiniciar el juego
+    const reiniciarJuego = ()=>{
+        setContadorJuegos(0)
+        setElementos(juegos[0].elementos)
+        setMensaje("")
+        setMostrarModal(false)
+    }
     // para hasta que juegos tenga algo si no juegoActual.titulo se me cae
     if (juegos.length === 0) return <p>Cargando...</p>;
 
     return(
-        <div className="container">
-            <CargarJuegos 
-                juego={juegoActual}
-                elementos={elementos}
-                handleOnDragStart={handleOnDragStart}
-                handleOnDrop={handleOnDrop}
-                handlePermitirDrop={handlePermitirDrop}
-                mensaje={mensaje}
-                contadorJuegos={contadorJuegos}
-                juegos={juegos}
-                areaActiva={areaActiva}
-                estadoDrop={estadoDrop}
-            />
-        </div>
+        <>
+            <div className="container">
+                <CargarJuegos 
+                    juego={juegoActual}
+                    elementos={elementos}
+                    handleOnDragStart={handleOnDragStart}
+                    handleOnDrop={handleOnDrop}
+                    handlePermitirDrop={handlePermitirDrop}
+                    mensaje={mensaje}
+                    contadorJuegos={contadorJuegos}
+                    juegos={juegos}
+                    areaActiva={areaActiva}
+                    estadoDrop={estadoDrop}
+                />
+            </div>
+        
+            // modal fin de juego
+        {mostrarModal && (
+            <div className="modal fade show d-block">
+            <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+
+                <div className="modal-header">
+                    <h5 className="modal-title">🎉 ¡Juego completado!</h5>
+                </div>
+
+                <div className="modal-body text-center">
+                    <p>Has terminado todos los juegos</p>
+                </div>
+
+                <div className="modal-footer justify-content-center">
+
+                    <button 
+                    className="btn btn-success"
+                    onClick={reiniciarJuego}
+                    >
+                    🔁 Volver a jugar
+                    </button>
+
+                    <button 
+                    className="btn btn-primary"
+                    onClick={volverInicio}
+                    >
+                    🏠 Pantalla inicial
+                    </button>
+
+                </div>
+
+                </div>
+            </div>
+            </div>
+
+            )}
+        </>
     )
 }
