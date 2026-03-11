@@ -8,6 +8,8 @@ export default function Juego() {
     const [elementos, setElementos]= useState([])
     const [contadorJuegos, setContadorJuegos]= useState(0)
     const [mensaje, setMensaje]= useState("")
+    const [areaActiva, setAreaActiva] = useState(null)
+    const [estadoDrop, setEstadoDrop] = useState(null)
     
     const sonidoOk = new Audio("/sonidos/ok.mp3")
     const sonidoNo = new Audio("/sonidos/no.mp3")
@@ -49,6 +51,7 @@ export default function Juego() {
     // cuando el elemento cae en el area, aca va toda la logica
     const handleOnDrop = (e, juegoId)=>{
         e.preventDefault();
+
         // se recibe el valor que viene en el transfer con getData
         const elemento = JSON.parse(e.dataTransfer.getData("elemento"))
 
@@ -56,6 +59,13 @@ export default function Juego() {
         if(elemento.respuesta === juegoId){
             // sonido correcta posicion
             sonidoOk.play()
+            setAreaActiva(juegoId)
+            setEstadoDrop("correcto")
+
+            setTimeout(()=>{
+                setAreaActiva(null)
+                setEstadoDrop(null)
+            },700)
             // filtar los elementos para quitarlos de la pantalla 
             const nuevosElementos = elementos.filter(ele => ele.id !== elemento.id);
             // setearlos al state
@@ -96,6 +106,13 @@ export default function Juego() {
         }else{
             sonidoNo.play()
             setMensaje("Intenta otra vez")
+            setAreaActiva(juegoId)
+            setEstadoDrop("incorrecto")
+
+            setTimeout(()=>{
+                setAreaActiva(null)
+                setEstadoDrop(null)
+            },700)
         }
     }
 
@@ -113,6 +130,8 @@ export default function Juego() {
                 mensaje={mensaje}
                 contadorJuegos={contadorJuegos}
                 juegos={juegos}
+                areaActiva={areaActiva}
+                estadoDrop={estadoDrop}
             />
         </div>
     )

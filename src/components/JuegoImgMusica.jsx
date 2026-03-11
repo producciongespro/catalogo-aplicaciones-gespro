@@ -6,7 +6,9 @@ export default function JuegoImgMusica({
   handlePermitirDrop,
   mensaje,
   contadorJuegos,
-  juegos
+  juegos,
+  areaActiva,
+  estadoDrop
 }) {
     return(
         <div>
@@ -33,7 +35,10 @@ export default function JuegoImgMusica({
                         juego?.areas.map(juego=>(
                             <div 
                                 key={juego.id} 
-                                className="areas"
+                                className={`areas
+                                    ${areaActiva === juego.id && estadoDrop === "correcto" ? "correcto" : ""}
+                                    ${areaActiva === juego.id && estadoDrop === "incorrecto" ? "incorrecto" : ""}
+                                `}
                                 onDrop={(e)=> handleOnDrop(e, juego.id)}
                                 onDragOver={handlePermitirDrop}
                             >

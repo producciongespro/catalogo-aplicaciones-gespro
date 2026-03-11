@@ -7,7 +7,10 @@ export default function JuegoAudioAnimales({ juego,
   handlePermitirDrop,
   mensaje,
   contadorJuegos,
-  juegos }) {
+  juegos,
+  areaActiva,
+  estadoDrop
+ }) {
 
    const handleReproducir = (elemento)=>{
         const audio = new Audio(`/sonidos/${elemento.audio}`)
@@ -45,7 +48,10 @@ export default function JuegoAudioAnimales({ juego,
                         juego?.areas.map(juego=>(
                             <div 
                                 key={juego.id} 
-                                className="areas"
+                                className={`areas
+                                    ${areaActiva === juego.id && estadoDrop === "correcto" ? "correcto" : ""}
+                                    ${areaActiva === juego.id && estadoDrop === "incorrecto" ? "incorrecto" : ""}
+                                `}
                                 onDrop={(e)=> handleOnDrop(e, juego.id)}
                                 onDragOver={handlePermitirDrop}
                             >
