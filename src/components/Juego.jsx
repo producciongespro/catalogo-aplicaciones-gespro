@@ -23,6 +23,7 @@ export default function Juego({volverInicio}) {
         setup()
     }, []);
 
+    // carga inicial
     const setup = async ()=>{
         try {
             // console.log("cargando juegos....");
@@ -90,7 +91,7 @@ export default function Juego({volverInicio}) {
 
                 setMensaje("Nivel completado")
 
-
+                // rerasar un poco el siguiente juego
                 setTimeout(()=>{
                     // aca valoramos si el arreglo de juegos esta vacio
                     if(contadorJuegos < juegos.length - 1){

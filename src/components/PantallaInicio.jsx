@@ -11,37 +11,41 @@ export default function PantallaInicio({iniciar}) {
     }
 
     return (
-    <div className="inicio-bg d-flex justify-content-center align-items-center">
+      <div className="row">
+        <div className="col-12">
+          <div className="inicio-bg d-flex justify-content-center align-items-center">
 
-      <div className="start-card shadow-lg text-center">
+            <div className="start-card shadow-lg text-center">
 
-        <img
-          src="/imagenes/robot.png"
-          className="robot-img"
-          alt="robot"
-        />
+              <img
+                src="/imagenes/robot.png"
+                className="robot-img"
+                alt="robot"
+              />
 
-        <div className="p-4 mt-4">
+              <div className="p-4 mt-4">
 
-          <p className="text-muted">
-            ¡Aprende jugando!
-          </p>
+                <p className="text-muted">
+                  ¡Aprende jugando!
+                </p>
 
-          <h2 className="fw-bold">
-            ¿Comencemos a jugar?
-          </h2>
+                <h2 className="fw-bold">
+                  ¿Comencemos a jugar?
+                </h2>
 
-          <button
-            className="btn btn-success btn-lg mt-3 start-btn"
-            onClick={handleIniciarJuego}
-          >
-            <FaPlay /> Iniciar juego
-          </button>
+                <button
+                  className="btn btn-success btn-lg mt-3 start-btn"
+                  onClick={handleIniciarJuego}
+                >
+                  <FaPlay /> Iniciar juego
+                </button>
 
+              </div>
+
+            </div>
+
+          </div>
         </div>
-
       </div>
-
-    </div>
   );
 }

@@ -62,10 +62,11 @@
   border-radius:20px;
   position:relative;
   padding-top:70px;
+  margin: 10px;
 }
 
 .robot-img{
-  width:430px;
+  width:420px;
   position:absolute;
   top:-50px;
   left:50%;

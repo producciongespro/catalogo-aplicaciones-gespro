@@ -12,12 +12,12 @@ export default function JuegoImgMusica({
   areas
 }) {
     return(
-        <div>
+        <div className="pt-5">
             <h2>{juego.titulo}</h2>
             <h3>{juego.instrucciones}</h3>
             <div className="row">
                 {/* elementos para arrastrar */}
-                <div className="col-12 d-flex justify-content-center gap-3 mt-5 mb-5">
+                <div className="col-12 d-flex justify-content-center flex-wrap gap-3 mt-5 mb-5">
                     {elementos.map(elemento =>(
                         <img 
                             className="elemento" 
@@ -31,7 +31,7 @@ export default function JuegoImgMusica({
                 </div>
 
                 {/* areas para dejar caer los elementos */}
-                <div className="col-12 d-flex justify-content-center gap-5 mt-5">
+                <div className="col-12 d-flex justify-content-center flex-wrap gap-5 mt-5">
                     {
                         areas?.map(juego=>(
                             <div 
