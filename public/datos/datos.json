@@ -7,7 +7,7 @@
       "instrucciones": "Arrastra el instrumento al grupo correcto",
       "areas": [
         { "id": 1, "nombre": "Viento" },
-        { "id": 2, "nombre": "Percusion" },
+        { "id": 2, "nombre": "Percusión" },
         { "id": 3, "nombre": "Cuerda" }
       ],
       "elementos": [

@@ -8,7 +8,8 @@ export default function JuegoImgMusica({
   contadorJuegos,
   juegos,
   areaActiva,
-  estadoDrop
+  estadoDrop,
+  areas
 }) {
     return(
         <div>
@@ -32,7 +33,7 @@ export default function JuegoImgMusica({
                 {/* areas para dejar caer los elementos */}
                 <div className="col-12 d-flex justify-content-center gap-5 mt-5">
                     {
-                        juego?.areas.map(juego=>(
+                        areas?.map(juego=>(
                             <div 
                                 key={juego.id} 
                                 className={`areas

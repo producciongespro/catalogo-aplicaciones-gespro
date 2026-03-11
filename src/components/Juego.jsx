@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
 import CargarJuegos from "./CargarJuegos";
 import ModalFinJuego from "./ModalFinJuego";
+import mezclarArray from "../helpers/mezclarArray";
 
 export default function Juego({volverInicio}) {
 
@@ -12,6 +13,7 @@ export default function Juego({volverInicio}) {
     const [areaActiva, setAreaActiva] = useState(null)
     const [estadoDrop, setEstadoDrop] = useState(null)
     const [mostrarModal, setMostrarModal] = useState(false)
+    const [areas, setAreas] = useState([])
 
     const sonidoOk = new Audio("/sonidos/ok.mp3")
     const sonidoNo = new Audio("/sonidos/no.mp3")
@@ -22,23 +24,22 @@ export default function Juego({volverInicio}) {
     }, []);
 
     const setup = async ()=>{
-        // console.log("cargando juegos....");
-        const respuesta = await fetch("/datos/datos.json")
-        const data = await respuesta.json()
-        console.log(data);
-        
-       
-        setJuegos(data.juegos)
-        // carga el primer juego
-        setElementos(data.juegos[0].elementos)
-        // console.log(juegos);
-        
+        try {
+            // console.log("cargando juegos....");
+            const respuesta = await fetch("/datos/datos.json")
+            const data = await respuesta.json()
+            setJuegos(data.juegos)
+            // carga el primer juego
+            setElementos(mezclarArray(data.juegos[0].elementos))
+            setAreas(mezclarArray(data.juegos[0].areas))
+        } catch (error) {
+            console.log("Error cargando juegos", error);
+        }    
     }
 
+    
     // iniciar el juego primer juego
     const juegoActual = juegos[contadorJuegos]
-    // console.log("Juego Actual",juegoActual);
-    
 
     // cuando el elemento inicia el arrastre se transfiere a la caja que recibe
     const handleOnDragStart = (e, elemento)=>{
@@ -96,7 +97,8 @@ export default function Juego({volverInicio}) {
                         const siguienteJuego = contadorJuegos + 1;
 
                         setContadorJuegos(siguienteJuego)
-                        setElementos(juegos[siguienteJuego].elementos)
+                        setElementos(mezclarArray(juegos[siguienteJuego].elementos))
+                        setAreas(mezclarArray(juegos[siguienteJuego].areas))
                         // mensajes aca setearlo
                         setMensaje("Nivel completado")
                     }else{
@@ -127,7 +129,8 @@ export default function Juego({volverInicio}) {
     // reiniciar el juego
     const reiniciarJuego = ()=>{
         setContadorJuegos(0)
-        setElementos(juegos[0].elementos)
+        setElementos(mezclarArray(juegos[0].elementos))
+        setAreas(mezclarArray(juegos[0].areas))
         setMensaje("")
         setMostrarModal(false)
     }
@@ -149,6 +152,7 @@ export default function Juego({volverInicio}) {
                 juegos={juegos}
                 areaActiva={areaActiva}
                 estadoDrop={estadoDrop}
+                areas={areas}
             />
 
             {mostrarModal && (

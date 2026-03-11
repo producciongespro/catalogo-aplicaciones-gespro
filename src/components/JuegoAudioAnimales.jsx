@@ -9,7 +9,8 @@ export default function JuegoAudioAnimales({ juego,
   contadorJuegos,
   juegos,
   areaActiva,
-  estadoDrop
+  estadoDrop,
+  areas
  }) {
 
    const handleReproducir = (elemento)=>{
@@ -45,7 +46,7 @@ export default function JuegoAudioAnimales({ juego,
                 {/* areas para dejar caer los elementos */}
                 <div className="col-12 d-flex justify-content-center gap-5 mt-5">
                     {
-                        juego?.areas.map(juego=>(
+                        areas?.map(juego=>(
                             <div 
                                 key={juego.id} 
                                 className={`areas
