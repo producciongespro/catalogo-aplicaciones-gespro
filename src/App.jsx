@@ -16,7 +16,7 @@ export default function App() {
         <CuentaRegresiva terminar={()=>setIniciar("juego")}/>
       )}
       {iniciar === "juego" && (
-        <Juego/>
+        <Juego volverInicio={()=>setIniciar("inicio")}/>
       )}
     </div>
   )
