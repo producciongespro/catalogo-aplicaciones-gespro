@@ -17,21 +17,19 @@ export default function ModalFinJuego({mostrar, reiniciarJuego,volverInicio}) {
                 <div className="modal-footer justify-content-center">
 
                     <button 
-                    className="btn btn-success"
-                    onClick={reiniciarJuego}
+                        className="btn btn-success"
+                        onClick={reiniciarJuego}
                     >
-                    Volver a jugar
+                        Volver a jugar
                     </button>
 
                     <button 
-                    className="btn btn-primary"
-                    onClick={volverInicio}
+                        className="btn btn-primary"
+                        onClick={volverInicio}
                     >
-                    Pantalla inicial
+                        Pantalla inicial
                     </button>
-
                 </div>
-
                 </div>
             </div>
         </div>

@@ -6,6 +6,10 @@ import Juego from "./components/Juego"
 export default function App() {
   
   const [iniciar, setIniciar] = useState("inicio");
+
+  // const iniciaJuego= ()=>{
+  //   setIniciar("contador")
+  // }
   
   return (
     <div className="game-bg text-center">

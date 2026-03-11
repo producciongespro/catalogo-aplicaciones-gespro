@@ -2,9 +2,14 @@
     cursor: grab;
     width: 120px;
     transition: all .3s ease-in-out;
+    user-select:none;
 }
+
 .elemento:hover{
     transform: rotate(3deg);
+}
+.elemento:active{
+  opacity: 0.5;
 }
 
 .areas{

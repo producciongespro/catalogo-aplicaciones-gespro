@@ -43,6 +43,10 @@ export default function Juego({volverInicio}) {
     // cuando el elemento inicia el arrastre se transfiere a la caja que recibe
     const handleOnDragStart = (e, elemento)=>{
         e.dataTransfer.setData("elemento", JSON.stringify(elemento))
+        
+        // utiliza la misma imagen para arrastrar, mostraba un globo en algunas imagenes
+        const img = e.target
+        e.dataTransfer.setDragImage(img, img.width / 2, img.height / 2)
     }
 
     // prevenir el comportamiento del evento en el navegador
