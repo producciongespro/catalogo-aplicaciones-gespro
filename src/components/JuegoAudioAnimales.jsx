@@ -1,4 +1,6 @@
 import { AiTwotoneSound } from "react-icons/ai";
+import ProgresoJuego from "./ProgresoJuego";
+import TituloJuego from "./TituloJuegos";
 
 export default function JuegoAudioAnimales({ juego,
   elementos,
@@ -21,8 +23,10 @@ export default function JuegoAudioAnimales({ juego,
     return(
     <div className="pt-5">
 
-        <h2>{juego.titulo}</h2>
-        <h3>{juego.instrucciones}</h3>
+        <TituloJuego
+            titulo={juego.titulo}
+            instrucciones={juego.instrucciones}
+        />
 
          <div className="row">
                 {/* elementos para arrastrar */}
@@ -63,11 +67,11 @@ export default function JuegoAudioAnimales({ juego,
                 </div>
                 
 
-                <h3>{mensaje}</h3>
-
-                <p>
-                    Juego {contadorJuegos + 1} de {juegos.length}
-                </p>
+                <ProgresoJuego
+                    mensaje={mensaje}
+                    contadorJuegos={contadorJuegos}
+                    juegos={juegos}
+                />
 
             </div>
 

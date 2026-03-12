@@ -100,8 +100,8 @@ export default function Juego({volverInicio}) {
                         setContadorJuegos(siguienteJuego)
                         setElementos(mezclarArray(juegos[siguienteJuego].elementos))
                         setAreas(mezclarArray(juegos[siguienteJuego].areas))
-                        // mensajes aca setearlo
-                        setMensaje("Nivel completado")
+                        // mensajes limpiarlo
+                        setMensaje("")
                     }else{
                         // mensajes aca setearlo
                         setMensaje("Juego Terminado")

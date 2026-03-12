@@ -1,3 +1,6 @@
+import ProgresoJuego from "./ProgresoJuego";
+import TituloJuego from "./TituloJuegos";
+
 export default function JuegoImgMusica({
   juego,
   elementos,
@@ -13,8 +16,11 @@ export default function JuegoImgMusica({
 }) {
     return(
         <div className="pt-5">
-            <h2>{juego.titulo}</h2>
-            <h3>{juego.instrucciones}</h3>
+            <TituloJuego
+                titulo={juego.titulo}
+                instrucciones={juego.instrucciones}
+            />
+
             <div className="row">
                 {/* elementos para arrastrar */}
                 <div className="col-12 d-flex justify-content-center flex-wrap gap-3 mt-5 mb-5">
@@ -50,11 +56,11 @@ export default function JuegoImgMusica({
                 </div>
                 
 
-                <h3>{mensaje}</h3>
-
-                <p>
-                    Juego {contadorJuegos + 1} de {juegos.length}
-                </p>
+                <ProgresoJuego
+                    mensaje={mensaje}
+                    contadorJuegos={contadorJuegos}
+                    juegos={juegos}
+                />
 
             </div>
         </div>
