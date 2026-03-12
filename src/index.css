@@ -26,6 +26,21 @@
     font-weight: 600;
     transition:0.3s;
 }
+.areas-formas{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    transition:0.3s;
+    overflow: hidden;
+}
+.borde-areas-formas{
+   border: 3px dashed gray;
+   padding: 40px 0;
+}
 
 .correcto{
     background:#c8f7c5;
@@ -47,12 +62,12 @@
 
 .game-bg{
   min-height:100vh;
-  background: linear-gradient(135deg,#74b9ff,#a29bfe);
+  background: linear-gradient(135deg,#4facfe,#00f2fe);
+  /* background: #f5f7fb; */
 }
 
 .inicio-bg{
   min-height:100vh;
-  background:rgba(0,0,0,0.2);
 }
 
 .start-card{

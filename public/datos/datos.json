@@ -35,6 +35,29 @@
         { "id": 3, "nombre": "Caballo", "imagen": "caballo.png", "audio": "caballo.mp3", "respuesta": 3 },
         { "id": 4, "nombre": "Cerdo", "imagen": "cerdo.png", "audio": "cerdo.mp3", "respuesta": 3 }
       ]
+    },
+    {
+      "id": 3,
+      "tipo": "imagenesFormas",
+      "titulo": "Formas",
+      "instrucciones": "Arrastra la forma rellena de color a su posición correcta",
+      "areas": [
+        { "id": 1, "nombre": "rombo", "imagen": "rombo.png" },
+        { "id": 2, "nombre": "lagrima", "imagen": "lagrima.png" },
+        { "id": 3, "nombre": "triangulo", "imagen": "triangulo.png" },
+        { "id": 4, "nombre": "sinesquinas", "imagen": "sinesquinas.png" },
+        { "id": 5, "nombre": "cruz", "imagen": "cruz.png" },
+        { "id": 6, "nombre": "circulo", "imagen": "circulo.png" }
+      
+      ],
+      "elementos": [
+        { "id": 1, "nombre": "rombo", "imagen": "romboR.png", "respuesta": 1 },
+        { "id": 2, "nombre": "lagrima", "imagen": "lagrimaR.png", "respuesta": 2 },
+        { "id": 3, "nombre": "triangulo", "imagen": "trianguloR.png", "respuesta": 3 },
+        { "id": 4, "nombre": "sinesquinas", "imagen": "sinesquinasR.png", "respuesta": 4 },
+        { "id": 5, "nombre": "cruz", "imagen": "cruzR.png", "respuesta": 5 },
+        { "id": 6, "nombre": "circulo", "imagen": "circuloR.png", "respuesta": 6 }
+      ]
     }
   ]
 }
