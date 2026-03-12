@@ -6,7 +6,7 @@ export default function ModalFinJuego({mostrar, reiniciarJuego,volverInicio}) {
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
 
-                <div className="modal-header">
+                <div className="modal-header text-center">
                     <h5 className="modal-title">¡Juego completado!</h5>
                 </div>
 

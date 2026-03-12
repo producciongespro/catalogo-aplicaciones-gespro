@@ -21,7 +21,7 @@ export default function JuegoAudioAnimales({ juego,
    }
 
     return(
-    <div className="pt-5">
+    <div className="pt-3">
 
         <TituloJuego
             titulo={juego.titulo}

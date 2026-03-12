@@ -15,7 +15,7 @@ export default function JuegoImgFormas({
   areas
 }) {
     return(
-        <div className="pt-5">
+        <div className="pt-3">
             <TituloJuego
                 titulo={juego.titulo}
                 instrucciones={juego.instrucciones}

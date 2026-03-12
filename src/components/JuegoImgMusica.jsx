@@ -15,12 +15,11 @@ export default function JuegoImgMusica({
   areas
 }) {
     return(
-        <div className="pt-5">
+        <div className="pt-3">
             <TituloJuego
                 titulo={juego.titulo}
                 instrucciones={juego.instrucciones}
             />
-
             <div className="row">
                 {/* elementos para arrastrar */}
                 <div className="col-12 d-flex justify-content-center flex-wrap gap-3 mt-5 mb-5">
