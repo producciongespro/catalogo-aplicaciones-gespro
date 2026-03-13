@@ -35,7 +35,7 @@ export default function JuegoMapaCr({
 
         {/* mapa de cr en svg */}
 
-        <div className="col-12 d-flex justify-content-center mt-5">
+        <div className="col-12 d-flex justify-content-center">
             <MapaCostaRica
                 handleOnDrop={handleOnDrop}
                 handlePermitirDrop={handlePermitirDrop}

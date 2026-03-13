@@ -136,3 +136,11 @@ background: rgba(0,0,0,0.5);
   font-size: 2rem;
   padding-top: 20px;
 }
+
+path.correcto{
+  fill: #4CAF50;
+}
+
+path.incorrecto{
+  fill: #ff4d4d;
+}
