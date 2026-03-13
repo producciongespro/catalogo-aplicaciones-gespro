@@ -30,7 +30,7 @@ export default function CuentaRegresiva({ terminar }) {
   return (
     <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
 
-      <div className="progress-circle">
+      <div className="progreso-circulo">
 
         <svg width="220" height="220">
 
@@ -61,7 +61,7 @@ export default function CuentaRegresiva({ terminar }) {
 
         </svg>
 
-        <div className="count-number">
+        <div className="contador-numero">
           {numero}
         </div>
 

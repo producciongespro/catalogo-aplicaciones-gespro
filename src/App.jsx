@@ -12,7 +12,7 @@ export default function App() {
   // }
   
   return (
-    <div className="game-bg text-center">
+    <div className="juego-bg text-center">
       {iniciar === "inicio" && (
         <PantallaInicio iniciar={()=>setIniciar("contador")}/>
       )}

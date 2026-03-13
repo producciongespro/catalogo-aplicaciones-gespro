@@ -15,7 +15,7 @@ export default function PantallaInicio({iniciar}) {
         <div className="col-12">
           <div className="inicio-bg d-flex justify-content-center align-items-center">
 
-            <div className="start-card shadow-lg text-center">
+            <div className="inicio-card shadow-lg text-center">
 
               <img
                 src="/imagenes/robot.png"
@@ -34,7 +34,7 @@ export default function PantallaInicio({iniciar}) {
                 </h2>
 
                 <button
-                  className="btn btn-success btn-lg mt-3 start-btn"
+                  className="btn btn-success btn-lg mt-3 inicio-btn"
                   onClick={handleIniciarJuego}
                 >
                   <FaPlay /> Iniciar juego

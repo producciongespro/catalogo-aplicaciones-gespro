@@ -60,7 +60,7 @@
 100%{transform:translateX(0)}
 }
 
-.game-bg{
+.juego-bg{
   min-height:100vh;
   background: linear-gradient(135deg,#4facfe,#00f2fe);
   /* background: #f5f7fb; */
@@ -70,7 +70,7 @@
   min-height:100vh;
 }
 
-.start-card{
+.inicio-card{
   width:420px;
   background:white;
   border-radius:20px;
@@ -87,19 +87,19 @@
   transform:translateX(-50%);
 }
 
-.start-btn{
+.inicio-btn{
   padding:14px 28px;
   border-radius:12px;
   font-size:18px;
 }
 
-.progress-circle{
+.progreso-circulo{
   position:relative;
   width:220px;
   height:220px;
 }
 
-.count-number{
+.contador-numero{
   position:absolute;
   top:50%;
   left:50%;
@@ -121,6 +121,7 @@ background: rgba(0,0,0,0.5);
   background: #e8e7e7;
   border-radius: 10px;
   padding: 15px;
+  opacity: .8;
 }
 .titulo-juego{
   font-size: 2.5rem;
@@ -131,6 +132,7 @@ background: rgba(0,0,0,0.5);
   font-weight: 600;
   background: #e8e7e7;
   border-radius: 10px;
+  opacity: .8;
 }
 .mensaje-progreso{
   font-size: 2rem;
