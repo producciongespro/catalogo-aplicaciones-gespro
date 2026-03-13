@@ -58,6 +58,30 @@
         { "id": 5, "nombre": "cruz", "imagen": "cruzR.png", "respuesta": 5 },
         { "id": 6, "nombre": "circulo", "imagen": "circuloR.png", "respuesta": 6 }
       ]
+    },
+    {
+      "id": 4,
+      "tipo": "mapaCR",
+      "titulo": "Provincias de Costa Rica",
+      "instrucciones": "Arrastra cada provincia al lugar correcto",
+      "areas": [
+        { "id": 1, "nombre": "alajuela" },
+        { "id": 2, "nombre": "cartago" },
+        { "id": 3, "nombre": "guanacaste" },
+        { "id": 4, "nombre": "heredia" },
+        { "id": 5, "nombre": "limon" },
+        { "id": 6, "nombre": "puntarenas" },
+        { "id": 7, "nombre": "sanjose" }
+      ],
+      "elementos": [
+        { "id": 1, "nombre": "guanacaste", "imagen": "guanacaste.svg", "respuesta": 3 },
+        { "id": 2, "nombre": "alajuela", "imagen": "alajuela.svg", "respuesta": 1 },
+        { "id": 3, "nombre": "heredia", "imagen": "heredia.svg", "respuesta": 4 },
+        { "id": 4, "nombre": "sanjose", "imagen": "sanjose.svg", "respuesta": 7 },
+        { "id": 5, "nombre": "cartago", "imagen": "cartago.svg", "respuesta": 2 },
+        { "id": 6, "nombre": "puntarenas", "imagen": "puntarenas.svg", "respuesta": 6 },
+        { "id": 7, "nombre": "limon", "imagen": "limon.svg", "respuesta": 5 }
+      ]
     }
   ]
 }
