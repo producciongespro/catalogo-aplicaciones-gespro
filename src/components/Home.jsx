@@ -30,6 +30,7 @@ function Home({ onStart }) {
       </div>
     </div>
   )
+  
 }
 
 export default Home
