@@ -39,6 +39,7 @@ function Resultados({ puntaje, totalPreguntas, respuestas, preguntas, onRestart 
           <h2>Revisión de Respuestas</h2>
           {preguntas.map((preguntaData, index) => {
             const respuestaIndex = respuestas[index]
+            const respuestaTexto = respuestaIndex != null ? preguntaData.opciones[respuestaIndex]?.texto : 'Sin respuesta'
             const esCorrecta = preguntaData.opciones[respuestaIndex]?.correcta
             
             return (
@@ -50,7 +51,7 @@ function Resultados({ puntaje, totalPreguntas, respuestas, preguntas, onRestart 
                 <div className="detalle-respuesta">
                   <p className="pregunta-rev">{preguntaData.pregunta}</p>
                   <p className="tu-respuesta">
-                    Tu respuesta: <strong>{preguntaData.opciones[respuestaIndex]?.texto}</strong>
+                    Tu respuesta: <strong>{respuestaTexto}</strong>
                   </p>
                   <p className={`estado ${esCorrecta ? 'correcta' : 'incorrecta'}`}>
                     {esCorrecta ? '✓ Correcta' : '✗ Incorrecta'}

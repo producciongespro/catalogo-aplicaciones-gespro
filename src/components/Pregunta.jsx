@@ -1,6 +1,6 @@
 import './Pregunta.css'
 
-function Pregunta({ preguntaData, numeroPregunta, totalPreguntas, onAnswer, respuestaSeleccionada }) {
+function Pregunta({ preguntaData, numeroPregunta, totalPreguntas, onAnswer, respuestaSeleccionada, onPrev, onNext, canPrev, canNext, isLast }) {
   const { pregunta, opciones } = preguntaData
 
   return (
@@ -33,6 +33,26 @@ function Pregunta({ preguntaData, numeroPregunta, totalPreguntas, onAnswer, resp
               <span className="opcion-texto">{opcion.texto}</span>
             </button>
           ))}
+        </div>
+
+        <div className="nav-buttons">
+          <button
+            className="btn-nav"
+            onClick={onPrev}
+            disabled={!canPrev}
+            type="button"
+          >
+            Anterior
+          </button>
+
+          <button
+            className="btn-nav btn-next"
+            onClick={onNext}
+            disabled={!canNext}
+            type="button"
+          >
+            {isLast ? 'Ver resultados' : 'Siguiente'}
+          </button>
         </div>
       </div>
     </div>

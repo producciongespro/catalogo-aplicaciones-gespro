@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import './Quiz.css'
 import Pregunta from './Pregunta'
 import Resultados from './Resultados'
@@ -12,7 +12,6 @@ function Quiz() {
   
   const [indicePreguntaActual, setIndicePreguntaActual] = useState(0)
   const [respuestas, setRespuestas] = useState([])
-  const [puntaje, setPuntaje] = useState(0)
   const [respuestaSeleccionada, setRespuestaSeleccionada] = useState(null)
 
   // Cargar datos del JSON
@@ -26,44 +25,53 @@ function Quiz() {
         }
         const data = await response.json()
         setPreguntas(data.preguntas)
+        setRespuestas(Array(data.preguntas.length).fill(null))
       } catch (err) {
         setError(err.message)
         console.error('Error:', err)
       } finally {
-        setCargando(true)
+        setCargando(false)
       }
     }
 
     cargarPreguntas()
   }, [])
 
+  // Sincronizar selección al cambiar de pregunta
+  useEffect(() => {
+    setRespuestaSeleccionada(respuestas[indicePreguntaActual] ?? null)
+  }, [indicePreguntaActual, respuestas])
+
+  const puntaje = useMemo(() => {
+    return preguntas.reduce((acum, pregunta, idx) => {
+      const respuestaIndex = respuestas[idx]
+      if (respuestaIndex === null || respuestaIndex === undefined) return acum
+      return pregunta.opciones[respuestaIndex]?.correcta ? acum + 1 : acum
+    }, 0)
+  }, [preguntas, respuestas])
+
   // Manejar respuesta
   const handleAnswer = (indexOpcion) => {
-    if (respuestaSeleccionada !== null) return // No permitir cambiar una vez seleccionada
-
     setRespuestaSeleccionada(indexOpcion)
-    
-    // Verificar si es correcta
-    const preguntaActual = preguntas[indicePreguntaActual]
-    const esCorrecta = preguntaActual.opciones[indexOpcion].correcta
-    
-    // Guardar respuesta
-    const nuevasRespuestas = [...respuestas, indexOpcion]
-    setRespuestas(nuevasRespuestas)
 
-    if (esCorrecta) {
-      setPuntaje(puntaje + 1)
+    const nuevasRespuestas = [...respuestas]
+    nuevasRespuestas[indicePreguntaActual] = indexOpcion
+    setRespuestas(nuevasRespuestas)
+  }
+
+  const handlePrev = () => {
+    if (indicePreguntaActual > 0) {
+      setIndicePreguntaActual(indicePreguntaActual - 1)
+    }
+  }
+
+  const handleNext = () => {
+    if (indicePreguntaActual < preguntas.length - 1) {
+      setIndicePreguntaActual(indicePreguntaActual + 1)
+      return
     }
 
-    // Después de 1 segundo ir a la siguiente pregunta o mostrar resultados
-    setTimeout(() => {
-      if (indicePreguntaActual < preguntas.length - 1) {
-        setIndicePreguntaActual(indicePreguntaActual + 1)
-        setRespuestaSeleccionada(null)
-      } else {
-        setEstado('resultados')
-      }
-    }, 1000)
+    setEstado('resultados')
   }
 
   // Iniciar quiz
@@ -73,8 +81,7 @@ function Quiz() {
       return
     }
     setEstado('quiz')
-    setRespuestas([])
-    setPuntaje(0)
+    setRespuestas(Array(preguntas.length).fill(null))
     setIndicePreguntaActual(0)
     setRespuestaSeleccionada(null)
   }
@@ -82,8 +89,7 @@ function Quiz() {
   // Reiniciar quiz
   const handleRestart = () => {
     setEstado('home')
-    setRespuestas([])
-    setPuntaje(0)
+    setRespuestas(Array(preguntas.length).fill(null))
     setIndicePreguntaActual(0)
     setRespuestaSeleccionada(null)
   }
@@ -114,6 +120,11 @@ function Quiz() {
         totalPreguntas={preguntas.length}
         onAnswer={handleAnswer}
         respuestaSeleccionada={respuestaSeleccionada}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        canPrev={indicePreguntaActual > 0}
+        canNext={respuestaSeleccionada !== null}
+        isLast={indicePreguntaActual === preguntas.length - 1}
       />
     )
   }
