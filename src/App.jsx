@@ -11,10 +11,8 @@ function App() {
   const setup = async ()=>{
     try {
       const res = await fetch("/data/data-tarjetas.json")
-      const data = res.json()
-      setTarjetas(data)
-      console.log(tarjetas);
-      
+      const {tarjetas} = await res.json()
+      setTarjetas(tarjetas)
     } catch (err) {
       console.log(err);
       setError("No se cargaron los datos de las tarjetas")
@@ -24,7 +22,6 @@ function App() {
   useEffect(() => {
     setup();
   }, []);
-
 
   if (error) {
     return <p>{error}</p>;

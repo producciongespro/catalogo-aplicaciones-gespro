@@ -1,0 +1,12 @@
+/* Juego */
+h2{
+    font-weight: bold;
+}
+/* Tablero */
+.tablero-contenedor{
+    min-height: 70vh;
+}
+.tablero-grid{
+    display: grid;
+    gap: 15px;
+}
