@@ -1,0 +1,13 @@
+{
+  "name": "categorias-desarrollo",
+  "version": "1.0.0",
+  "description": "Servidor estático para catálogo de categorías",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true
+}
