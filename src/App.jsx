@@ -5,14 +5,14 @@ import JuegoMemoria from "./components/JuegoMemoria"
 
 function App() {
 
-  const [tarjetas, setTarjetas]= useState(null)
+  const [tarjetas, setTarjetas]= useState([])
   const [error, setError]= useState(null)
 
   const setup = async ()=>{
     try {
       const res = await fetch("/data/data-tarjetas.json")
-      const {tarjetas} = await res.json()
-      setTarjetas(tarjetas)
+      const data = await res.json()
+      setTarjetas(data.tarjetas)
     } catch (err) {
       console.log(err);
       setError("No se cargaron los datos de las tarjetas")
@@ -25,6 +25,10 @@ function App() {
 
   if (error) {
     return <p>{error}</p>;
+  }
+
+  if(!tarjetas){
+    return <p>Cargando...</p>
   }
 
   return (

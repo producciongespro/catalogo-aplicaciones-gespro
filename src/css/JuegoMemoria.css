@@ -10,3 +10,27 @@ h2{
     display: grid;
     gap: 15px;
 }
+
+/* Carta */
+.carta{
+    width: 100px;
+    height: 100px;
+    background-color: #0d63fd;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+.carta:hover{
+    transform: scale(1.08);
+}
+.carta.abierta{
+    background-color: #f8f9fa;
+    color: black;
+}
