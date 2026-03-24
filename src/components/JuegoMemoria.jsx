@@ -3,7 +3,7 @@ import Tablero from "./Tablero";
 import "../css/JuegoMemoria.css"
 
 export default function JuegoMemoria({tarjetas}) {
-  // console.log(tarjetas.filter(tarjeta => tarjeta.tipo === "numero"));
+  //console.log(tarjetas.filter(tarjeta => tarjeta.tipo === "numero"));
   
   const [nivel, setNivel] = useState(1)
   const [cartas, setCartas] = useState([])
@@ -25,7 +25,7 @@ export default function JuegoMemoria({tarjetas}) {
 
     // Filtra solo las cartas del nivel
     const tarjetasFiltradas = (tarjetas || []).filter(tarjeta => tarjeta.tipo === tipoNivel)
-
+    
     //Agrupa en parejas
     const grupos = {}
 
@@ -115,6 +115,7 @@ export default function JuegoMemoria({tarjetas}) {
       }
     }
   },[cartas])
+  
 
   return (
     <div className="container text-center mt-4">

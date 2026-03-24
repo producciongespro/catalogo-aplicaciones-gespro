@@ -7,10 +7,11 @@ export default function Carta({carta,handleClick}) {
             className={`carta ${abierta ? "abierta" : ""}`}
             onClick={()=>handleClick(carta)}
         >
-            {abierta 
-            ? 
-            <img src={`/img/${carta.imagen}`} alt={carta.imagen} />
-            : "?"}
+            {abierta ? (
+                <img 
+                    src={`/img/${carta.imagen}`} alt={carta.valor}/>
+                ) : "?"
+            }
         </div>
     )
 };
