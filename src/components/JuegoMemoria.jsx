@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Tablero from "./Tablero";
+import confetti from "canvas-confetti";
 import "../css/JuegoMemoria.css"
 
 export default function JuegoMemoria({tarjetas}) {
@@ -9,6 +10,7 @@ export default function JuegoMemoria({tarjetas}) {
   const [cartas, setCartas] = useState([])
   const [seleccionadas, setSeleccionadas] = useState([])
   const [bloqueado, setBloqueado]=useState(false)
+  const [mostrarModal, setMostrarModal] = useState(false)
 
   const sonidoOk = new Audio("/sonidos/ok.mp3")
   const sonidoNo = new Audio("/sonidos/no.mp3")
@@ -117,25 +119,76 @@ export default function JuegoMemoria({tarjetas}) {
           setNivel(nivel + 1)
         }, 800);
       }else{
-        alert("Juego Terminado")
+       sonidoFin.play()
+
+        confetti({
+          particleCount: 150,
+          spread: 100,
+          origin: { y: 0.6 }
+        })
+
+        // mostrar modal
+        setTimeout(() => setMostrarModal(true), 500)
       }
     }
   },[cartas])
   
 
   return (
-    <div className="container text-center mt-4">
-      <h2 className="mt-3">Juego de Memoria</h2>
-      <h4 className="text-primary"> Nivel {nivel}</h4>
-      <div className="flex justify-content-center align-items-center tablero-contenedor">
-        <div className="tablero-grid">
-          <Tablero
-            cartas={cartas}
-            handleClick={handleClick}
-            nivel={nivel}
-          />
+    <>
+      <div className="container text-center mt-4">
+        <h2 className="mt-3">Juego de Memoria</h2>
+        <h4 className="text-primary"> Nivel {nivel}</h4>
+        <div className="flex justify-content-center align-items-center tablero-contenedor">
+          <div className="tablero-grid">
+            <Tablero
+              cartas={cartas}
+              handleClick={handleClick}
+              nivel={nivel}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    
+
+      {/* Modal */}
+      {mostrarModal && (
+        <div className="modal fade show d-block" tabIndex="-1">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content text-center">
+              
+              <div className="modal-header">
+                <h5 className="modal-title">🎉 ¡Felicidades!</h5>
+              </div>
+
+              <div className="modal-body">
+                <p>Has completado el juego</p>
+              </div>
+
+              <div className="modal-footer justify-content-center">
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setNivel(1)
+                    setMostrarModal(false)
+                  }}
+                >
+                  Volver a jugar
+                </button>
+
+                <button 
+                  className="btn btn-secondary"
+                  onClick={() => setMostrarModal(false)}
+                >
+                  Cerrar
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+
   );
 }
