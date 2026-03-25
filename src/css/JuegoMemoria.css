@@ -40,3 +40,58 @@ h2{
     height: 100%;
     border-radius: 9px;
 }
+
+/* contenedor */
+.carta-contenedor {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px; /* 🔥 profundidad */
+  cursor: pointer;
+}
+
+/* parte que rota */
+.carta-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* cuando se voltea */
+.carta-inner.flip {
+  transform: rotateY(180deg);
+}
+
+/* caras */
+.carta-frente,
+.carta-atras {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden; /* 🔥 oculta la cara trasera */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* frente */
+.carta-frente {
+  background: #0d63fd;
+  color: white;
+  font-size: 2rem;
+}
+
+/* atrás */
+.carta-atras {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+/* imagen */
+.carta-atras img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

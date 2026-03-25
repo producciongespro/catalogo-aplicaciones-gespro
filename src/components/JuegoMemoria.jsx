@@ -9,6 +9,11 @@ export default function JuegoMemoria({tarjetas}) {
   const [cartas, setCartas] = useState([])
   const [seleccionadas, setSeleccionadas] = useState([])
   const [bloqueado, setBloqueado]=useState(false)
+
+  const sonidoOk = new Audio("/sonidos/ok.mp3")
+  const sonidoNo = new Audio("/sonidos/no.mp3")
+  const sonidoFin = new Audio("/sonidos/fin.mp3")
+  const sonidoFlip = new Audio("/sonidos/flip.mp3")
   
   const niveles = {
     1: 8,
@@ -72,6 +77,7 @@ export default function JuegoMemoria({tarjetas}) {
     //validar estas opciones
     if(bloqueado || carta.abierta || carta.encontrada) return
 
+    sonidoFlip.play()
     const nuevas = cartas.map(c => 
       c.uid === carta.uid ? {...c, abierta: true } : c)
 
