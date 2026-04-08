@@ -10,6 +10,7 @@ export default function JuegoMemoria({ tarjetas }) {
   const [seleccionadas, setSeleccionadas] = useState([]);
   const [bloqueado, setBloqueado] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [errorIds, setErrorIds] = useState([]);
 
   const [intentos, setIntentos] = useState(0);
   const [nombre, setNombre] = useState("");
@@ -97,6 +98,10 @@ export default function JuegoMemoria({ tarjetas }) {
 
     const esPareja = c1.parId === c2.parId;
 
+     if (!esPareja) {
+      setErrorIds([c1.uid, c2.uid]);
+    }
+
     setTimeout(() => {
       setCartas(prev =>
         prev.map(c => {
@@ -113,6 +118,7 @@ export default function JuegoMemoria({ tarjetas }) {
 
       setSeleccionadas([]);
       setBloqueado(false);
+      setErrorIds([]);
     }, 800);
   };
 
@@ -200,6 +206,7 @@ export default function JuegoMemoria({ tarjetas }) {
           cartas={cartas}
           handleClick={handleClick}
           nivel={nivel}
+          errorIds={errorIds}
         />
 
         {/* Ranking */}
