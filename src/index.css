@@ -1,41 +1,82 @@
+.container {
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+p {
+  font-size: clamp(12px, 2vw, 18px);
+}
+
 .elemento{
     cursor: grab;
-    width: 150px;
-    height: 150px;
+    width: clamp(80px, 15vw, 150px);
+    height: clamp(80px, 15vw, 150px);
     object-fit: contain;
     flex-shrink: 0;
-    transition: all .3s ease-in-out;
     user-select: none;
+    touch-action: none;
+    will-change: transform;
+    -webkit-user-drag: none;
 }
 
 .elemento:hover{
     transform: rotate(3deg);
 }
-.elemento:active{
-  opacity: 0.5;
+.elemento:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+.elemento-audio {
+  width: clamp(80px, 15vw, 150px);
+  height: clamp(80px, 15vw, 150px);
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  transition: transform 0.15s ease;
+  padding: 1px;
+}
+
+.elemento-audio:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+.icono-sonido {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.btn-audio {
+  font-size: clamp(10px, 2vw, 14px);
+  padding: clamp(4px, 1vw, 8px) clamp(6px, 2vw, 12px);
 }
 
 .areas{
-    width: 250px;
-    height: 160px;
-    border: 3px dashed gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 600;
-    transition:0.3s;
+  width: clamp(90px, 18vw, 160px);
+  height: clamp(90px, 18vw, 160px);
+  border: 3px dashed gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  transition:0.3s;
 }
 .areas-formas{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 600;
-    transition:0.3s;
-    overflow: hidden;
+  width: clamp(90px, 18vw, 160px);
+  height: clamp(90px, 18vw, 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  transition:0.3s;
+  overflow: hidden;
 }
 .borde-areas-formas{
    border: 3px dashed gray;
@@ -109,23 +150,30 @@
   color:#28a745;
 }
 
-.icono-sonido{
-  width: 60px;
-  height: 60px;
+.icono-sonido {
+  font-size: clamp(50px, 12vw, 80px);
+  line-height: 1;
 }
 
 .modal{
-background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5);
 }
+
 .fondo-titulos{
   background: #e8e7e7;
   border-radius: 10px;
   padding: 15px;
   opacity: .8;
 }
+
 .titulo-juego{
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
+
+.instrucciones{
+  font-size: clamp(1rem, 4vw, 2.5rem);
+}
+
 .progreso{
   font-size: 1.5rem;
   padding: 20px;

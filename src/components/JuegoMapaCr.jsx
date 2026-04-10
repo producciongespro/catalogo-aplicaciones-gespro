@@ -5,14 +5,14 @@ import MapaCostaRica from "./MapaCostaRica";
 export default function JuegoMapaCr({
   juego,
   elementos,
-  handleOnDragStart,
-  handleOnDrop,
-  handlePermitirDrop,
   mensaje,
   contadorJuegos,
   juegos,
   areaActiva,
   estadoDrop,
+  handlePointerDown,
+  handlePointerMove,
+  handlePointerUp
 }) {
   return (
     <div className="pt-3">
@@ -21,14 +21,22 @@ export default function JuegoMapaCr({
       <div className="row">
         {/* provincias arrastrables */}
 
-        <div className="col-12 d-flex justify-content-center flex-wrap gap-3 mt-5 mb-5">
+        <div className="col-12 d-flex justify-content-center flex-wrap gap-3 mt-5 mb-3">
           {elementos.map((elemento) => (
             <img
               key={elemento.id}
               src={`/imagenes/${elemento.imagen}`}
               className="elemento"
-              draggable
-              onDragStart={(e) => handleOnDragStart(e, elemento)}
+              draggable={false}
+              onPointerDown={(e) => handlePointerDown(e, elemento)}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+
+              style={{
+                  touchAction: "none",
+                  userSelect: "none",
+                  cursor: "grab"
+              }}
             />
           ))}
         </div>
@@ -37,8 +45,6 @@ export default function JuegoMapaCr({
 
         <div className="col-12 d-flex justify-content-center">
             <MapaCostaRica
-                handleOnDrop={handleOnDrop}
-                handlePermitirDrop={handlePermitirDrop}
                 areaActiva={areaActiva}
                 estadoDrop={estadoDrop}
             />
