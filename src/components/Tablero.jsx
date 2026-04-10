@@ -11,10 +11,10 @@ export default function Tablero({cartas, handleClick, nivel, errorIds}) {
         <div className="container">
             <motion.div 
                 className="tablero-grid"
-                style={{ gridTemplateColumns: `repeat(${columnas}, 150px)` }}
+                // style={{ gridTemplateColumns: `repeat(${columnas}, 150px)` }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 1 }}
             >
                 {cartas.map(carta => (
                     <Carta
