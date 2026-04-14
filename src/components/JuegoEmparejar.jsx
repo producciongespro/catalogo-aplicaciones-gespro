@@ -98,73 +98,91 @@ export default function JuegoEmparejar() {
 
   return (
     <div
-      ref={containerRef}
-      className="container py-4 position-relative"
-      onPointerMove={handlePointerMove}
-      style={{ touchAction: "none" }}
-    >
-      {/* 🧠 Título e instrucciones */}
-      <div className="text-center mb-4">
-        <h3>{juego.titulo}</h3>
-        <p className="text-muted">{juego.instrucciones}</p>
-      </div>
+  ref={containerRef}
+  className="container py-4 position-relative"
+  onPointerMove={handlePointerMove}
+  style={{ touchAction: "none" }}
+>
+  <div className="game-container">
 
-      {/* SVG */}
-      <svg className="position-absolute top-0 start-0 w-100 h-100" style={{ pointerEvents: "none" }}>
-        {lineas.map((l, i) => (
-          <line
-            key={i}
-            x1={l.x1}
-            y1={l.y1}
-            x2={l.x2}
-            y2={l.y2}
-            stroke={l.correcto ? "green" : "red"}
-            strokeWidth="4"
-          />
-        ))}
+    {/* HEADER */}
+    <div className="text-center mb-4">
+      <div className="game-title">{juego.titulo}</div>
+      <div className="game-subtitle">{juego.instrucciones}</div>
+    </div>
 
+    {/* SVG */}
+    <svg className="position-absolute top-0 start-0 w-100 h-100" style={{ pointerEvents: "none" }}>
+      {lineas.map((l, i) => (
         <line
-          ref={previewLineRef}
-          stroke="gray"
-          strokeDasharray="5,5"
-          strokeWidth="3"
-          style={{ display: "none" }}
+          key={i}
+          x1={l.x1}
+          y1={l.y1}
+          x2={l.x2}
+          y2={l.y2}
+          stroke={l.correcto ? "#28a745" : "#dc3545"}
+          strokeWidth="4"
         />
-      </svg>
+      ))}
 
-      <div className="row justify-content-center">
-        {/* Conceptos */}
-        <div className="col-5 col-md-4">
-          {conceptos.map((item) => (
+      <line
+        ref={previewLineRef}
+        stroke="#999"
+        strokeDasharray="5,5"
+        strokeWidth="3"
+        style={{ display: "none" }}
+      />
+    </svg>
+
+    <div className="row justify-content-center">
+      
+      {/* CONCEPTOS */}
+      <div className="col-5 col-md-4">
+        {conceptos.map((item) => {
+          const usado = usadosConceptos.has(item.id);
+
+          return (
             <div
               key={item.id}
-              className={`card p-3 mb-3 text-center shadow-sm 
-              ${usadosConceptos.has(item.id) ? "bg-secondary text-white opacity-50" : ""}`}
+              className={`card game-card p-3 mb-3 text-center shadow-sm 
+              ${usado ? "disabled" : ""}`}
               onPointerDown={(e) => handlePointerDown(e, item)}
-              style={{ cursor: usadosConceptos.has(item.id) ? "not-allowed" : "grab" }}
             >
               {item.concepto}
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
-        <div className="col-2 d-none d-md-block"></div>
+      <div className="col-2 d-none d-md-block"></div>
 
-        {/* Respuestas */}
-        <div className="col-5 col-md-4">
-          {respuestas.map((item) => (
+      {/* RESPUESTAS */}
+      <div className="col-5 col-md-4">
+        {respuestas.map((item) => {
+          const usado = usadosRespuestas.has(item.id);
+
+          // buscar si fue correcto o incorrecto
+          const conexion = lineas.find(l => l.to === item.id);
+
+          let estado = "";
+          if (conexion) {
+            estado = conexion.correcto ? "correct" : "incorrect";
+          }
+
+          return (
             <div
               key={item.id}
-              className={`card p-3 mb-3 text-center shadow-sm 
-              ${usadosRespuestas.has(item.id) ? "bg-secondary text-white opacity-50" : ""}`}
+              className={`card game-card p-3 mb-3 text-center shadow-sm 
+              ${usado ? "disabled" : ""} ${estado}`}
               onPointerUp={(e) => handlePointerUp(item, e)}
-              style={{ cursor: usadosRespuestas.has(item.id) ? "not-allowed" : "pointer" }}
             >
               {item.respuesta}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
+  </div>
+</div>
   );
 }

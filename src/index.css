@@ -49,3 +49,66 @@
     width: 90%;
   }
 }
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+/* contenedor */
+.game-container {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* tarjetas */
+.game-card {
+  border-radius: 15px;
+  transition: all 0.2s ease;
+  cursor: grab;
+}
+
+.game-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* bloqueado */
+.game-card.disabled {
+  background: #6c757d !important;
+  color: white;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* correcto */
+.game-card.correct {
+  background: #28a745 !important;
+  color: white;
+}
+
+/* incorrecto */
+.game-card.incorrect {
+  background: #dc3545 !important;
+  color: white;
+}
+
+/* título */
+.game-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/* instrucciones */
+.game-subtitle {
+  color: #6c757d;
+}
+
+/* móvil */
+@media (max-width: 576px) {
+  .game-title {
+    font-size: 1.4rem;
+  }
+}
