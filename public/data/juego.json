@@ -1,0 +1,15 @@
+{
+    "juego":[
+        {
+            "id": 1,
+            "tipo": "emparejar",
+            "titulo": "Emparejar conceptos",
+            "instrucciones": "Arrastra el valor de la columna izquierda al de la derecha.",
+            "conceptos":[
+                { "id": 1, "concepto": "HTML", "respuesta": "Estructura web" },
+                { "id": 2, "concepto": "CSS", "respuesta": "Estilos visuales" },
+                { "id": 3, "concepto": "JavaScript", "respuesta": "Interactividad" }
+            ]
+        }
+    ]
+}
