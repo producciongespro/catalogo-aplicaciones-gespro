@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "pregunta": "El león es un mamífero.",
+    "respuesta": true,
+    "imagen": "/images/leon.jpg"
+  },
+  {
+    "id": 2,
+    "pregunta": "Los delfines son peces.",
+    "respuesta": false,
+    "imagen": ""
+  },
+  {
+    "id": 3,
+    "pregunta": "Los tucanes pueden volar.",
+    "respuesta": true,
+    "imagen": "/images/tucan.jpg"
+  },
+  {
+    "id": 4,
+    "pregunta": "El elefante es el animal terrestre más grande del mundo.",
+    "respuesta": true,
+    "imagen": "/images/elefante.jpg"
+  },
+  {
+    "id": 5,
+    "pregunta": "Los pingüinos viven únicamente en el Polo Norte.",
+    "respuesta": false,
+    "imagen": ""
+  },
+  {
+    "id": 6,
+    "pregunta": "La tortuga tiene coraza.",
+    "respuesta": true,
+    "imagen": "/images/tortuga.jpg"
+  },
+  {
+    "id": 7,
+    "pregunta": "Los cocodrilos son anfibios.",
+    "respuesta": false,
+    "imagen": "/images/cocodrilo.jpg"
+  },
+  {
+    "id": 8,
+    "pregunta": "La rana puede nadar.",
+    "respuesta": true,
+    "imagen": "/images/rana.jpg"
+  },
+  {
+    "id": 9,
+    "pregunta": "Todas las serpientes son venenosas.",
+    "respuesta": false,
+    "imagen": ""
+  },
+  {
+    "id": 10,
+    "pregunta": "El oso peresozo es lento.",
+    "respuesta": true,
+    "imagen": "/images/peresozo.jpg"
+  }
+]
