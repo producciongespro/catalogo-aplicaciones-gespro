@@ -1,0 +1,54 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuanto es 3 + 2?",
+      "opciones": [
+        { "texto": "6", "correcta": false },
+        { "texto": "1", "correcta": false },
+        { "texto": "4", "correcta": false },
+        { "texto": "5", "correcta": true }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuanto es 2 * 3?",
+      "opciones": [
+        { "texto": "5", "correcta": false },
+        { "texto": "8", "correcta": false },
+        { "texto": "6", "correcta": true },
+        { "texto": "4", "correcta": false }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Cuánto es 8 - 4?",
+      "opciones": [
+        { "texto": "4", "correcta": true },
+        { "texto": "5", "correcta": false },
+        { "texto": "7", "correcta": false },
+        { "texto": "2", "correcta": false }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuánto es 8 / 2?",
+      "opciones": [
+        { "texto": "4", "correcta": true },
+        { "texto": "2", "correcta": false },
+        { "texto": "6", "correcta": false },
+        { "texto": "1", "correcta": false }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuánto es 8 + 1?",
+      "opciones": [
+        { "texto": "7", "correcta": false },
+        { "texto": "5", "correcta": false },
+        { "texto": "6", "correcta": false },
+        { "texto": "9", "correcta": true }
+      ]
+    }
+  ]
+}

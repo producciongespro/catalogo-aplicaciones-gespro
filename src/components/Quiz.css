@@ -1,0 +1,32 @@
+.quiz-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.quiz-error h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.quiz-error p {
+  font-size: 1.1em;
+  max-width: 500px;
+}
+
+.quiz-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+}
